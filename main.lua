@@ -38,9 +38,7 @@
     Credit for music:
     Field: https://freesound.org/people/Mrthenoronha/sounds/371843/
     Battle: https://freesound.org/people/Sirkoto51/sounds/414214/
-]]
-
-require 'src/Dependencies'
+]] require 'src/Dependencies'
 
 function love.load()
     love.window.setTitle('Poke50')
