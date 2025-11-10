@@ -4,9 +4,7 @@
 
     Author: Colton Ogden
     cogden@cs50.harvard.edu
-]]
-
-BattleSprite = Class{}
+]] BattleSprite = Class {}
 
 function BattleSprite:init(texture, x, y)
     self.texture = texture
@@ -18,7 +16,7 @@ function BattleSprite:init(texture, x, y)
     -- https://love2d.org/forums/viewtopic.php?t=79617
     -- white shader that will turn a sprite completely white when used; allows us
     -- to brightly blink the sprite when it's acting
-    self.whiteShader = love.graphics.newShader[[
+    self.whiteShader = love.graphics.newShader [[
         extern float WhiteFactor;
 
         vec4 effect(vec4 vcolor, Image tex, vec2 texcoord, vec2 pixcoord)

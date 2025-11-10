@@ -4,9 +4,7 @@
 
     Author: Colton Ogden
     cogden@cs50.harvard.edu
-]]
-
-Opponent = Class{}
+]] Opponent = Class {}
 
 function Opponent:init(def)
     self.party = def.party
