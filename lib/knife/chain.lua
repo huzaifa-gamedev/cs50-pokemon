@@ -1,5 +1,5 @@
-local function Invoker (links, index)
-    return function (...)
+local function Invoker(links, index)
+    return function(...)
         local link = links[index]
         if not link then
             return
@@ -7,15 +7,17 @@ local function Invoker (links, index)
         local continue = Invoker(links, index + 1)
         local returned = link(continue, ...)
         if returned then
-            returned(function (_, ...) continue(...) end)
+            returned(function(_, ...)
+                continue(...)
+            end)
         end
     end
 end
-    
-return function (...)
-    local links = { ... }
 
-    local function chain (...)
+return function(...)
+    local links = {...}
+
+    local function chain(...)
         if not (...) then
             return Invoker(links, 1)(select(2, ...))
         end
