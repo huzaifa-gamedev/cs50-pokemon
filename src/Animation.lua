@@ -6,9 +6,7 @@
 
     Author: Colton Ogden
     cogden@cs50.harvard.edu
-]]
-
-Animation = Class{}
+]] Animation = Class {}
 
 function Animation:init(def)
     self.frames = def.frames
