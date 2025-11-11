@@ -4,9 +4,7 @@
 
     Author: Colton Ogden
     cogden@cs50.harvard.edu
-]]
-
-TileMap = Class{}
+]] TileMap = Class {}
 
 function TileMap:init(width, height)
     self.tiles = {}
