@@ -1,22 +1,22 @@
 local tinsert, tconcat, infinity = table.insert, table.concat, math.huge
 
-return function (value)
+return function(value)
     local intro, outro, ready, known = {}, {}, {}, {}
     local knownCount = 0
     local writer = {}
 
     -- get writer delegate for this value's type
-    local function getWriter (value)
+    local function getWriter(value)
         return writer[type(value)]
     end
 
     -- check if a value has a representation yet
-    local function isReady (value)
+    local function isReady(value)
         return type(value) ~= 'table' or ready[value]
     end
 
     -- serialize tables
-    function writer.table (value)
+    function writer.table(value)
         if known[value] then
             return known[value]
         end
@@ -46,20 +46,18 @@ return function (value)
     end
 
     -- preserve sign bit on NaN, since Lua prints "nan" or "-nan"
-    local function writeNan (n)
-        return tostring(n) == tostring(0/0) and '0/0' or '-(0/0)'
+    local function writeNan(n)
+        return tostring(n) == tostring(0 / 0) and '0/0' or '-(0/0)'
     end
 
     -- serialize numbers
-    function writer.number (value)
-        return value == infinity and '1/0'
-            or value == -infinity and '-1/0'
-            or value ~= value and writeNan(value)
-            or ('%.17G'):format(value)
+    function writer.number(value)
+        return value == infinity and '1/0' or value == -infinity and '-1/0' or value ~= value and writeNan(value) or
+                   ('%.17G'):format(value)
     end
 
     -- serialize strings
-    function writer.string (value)
+    function writer.string(value)
         return ('%q'):format(value)
     end
 
@@ -67,7 +65,7 @@ return function (value)
     writer.boolean = tostring
 
     -- concatenate array, joined by and terminated with line break
-    local function lines (t)
+    local function lines(t)
         return #t == 0 and '' or tconcat(t, '\n') .. '\n'
     end
 
