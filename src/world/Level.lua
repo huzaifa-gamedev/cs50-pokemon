@@ -4,9 +4,7 @@
 
     Author: Colton Ogden
     cogden@cs50.harvard.edu
-]]
-
-Level = Class{}
+]] Level = Class {}
 
 function Level:init()
     self.tileWidth = 50
@@ -23,12 +21,16 @@ function Level:init()
         mapX = 10,
         mapY = 10,
         width = 16,
-        height = 16,
+        height = 16
     }
 
     self.player.stateMachine = StateMachine {
-        ['walk'] = function() return PlayerWalkState(self.player, self) end,
-        ['idle'] = function() return PlayerIdleState(self.player) end
+        ['walk'] = function()
+            return PlayerWalkState(self.player, self)
+        end,
+        ['idle'] = function()
+            return PlayerIdleState(self.player)
+        end
     }
     self.player.stateMachine:change('idle')
 end
