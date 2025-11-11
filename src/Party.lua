@@ -4,9 +4,7 @@
 
     Author: Colton Ogden
     cogden@cs50.harvard.edu
-]]
-
-Party = Class{}
+]] Party = Class {}
 
 function Party:init(def)
     self.pokemon = def.pokemon
