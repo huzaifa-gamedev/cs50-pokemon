@@ -14,6 +14,7 @@
 ## 📋 Project Overview
 
 This repository contains my implementation of the **Pokémon** assignment from *CS50’s Introduction to Game Development*.  
+
 🎮 The project recreates a simplified Pokémon battle system inspired by the original Game Boy titles — featuring turn-based combat, health mechanics, and level-up progression.  
 
 In this version, I implemented an enhanced **Level-Up Stats Menu**, improving the feedback loop and making the experience more engaging and visually informative.
