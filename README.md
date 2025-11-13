@@ -1,4 +1,4 @@
-# ⚔️ CS50 — Pokémon  
+# 🐉 CS50 — Pokémon  
 
 [![LÖVE2D](https://img.shields.io/badge/Engine-L%C3%96VE2D-informational)](https://love2d.org/)
 [![Language](https://img.shields.io/badge/Language-Lua-blue)](https://www.lua.org/)
